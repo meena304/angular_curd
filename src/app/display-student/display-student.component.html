@@ -1,0 +1,28 @@
+
+
+<div class="container">
+  <table class="table table-hover" style="border-collapse: separate; border-spacing: 0 1em">
+  <thead>
+    <tr>
+      <!--<th scope="col">#</th>-->
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor='let b of stu_dis; index as i' class="shadow-lg p-3 mb-5 bg-body rounded" >
+      <!--<th scope="row">{{i}}</th>-->
+
+      <td>{{b.name}}</td>
+      <td>{{b.email}}</td>
+      <td>
+        <a class='btn btn-success me-3' [routerLink]="['/view', b.id]">View </a>
+        <a class='btn btn-primary me-3' [routerLink]="['/edit', b.id]"> Edit </a>
+        <a class='btn btn-danger me-3' (click)=deleteStudent(b.id) > Delete </a>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+</div>
